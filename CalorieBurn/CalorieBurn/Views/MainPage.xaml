@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CalorieBurn.Views.MainPage">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="LightGray" Spacing="10">
+            <Frame HeightRequest="50">
+                <StackLayout>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="18"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="4*"/>
+                            <ColumnDefinition Width="40*"/>
+                            <ColumnDefinition Width="4*"/>
+                        </Grid.ColumnDefinitions>
+                        <ProgressBar Grid.Row="0" Grid.Column="1" ProgressColor="Green" Progress="1" WidthRequest="50" ScaleY="2"/>
+                        <ProgressBar Grid.Row="0" Grid.Column="1"  ProgressColor="Yellow" Progress="0.76" WidthRequest="50" ScaleY="2"/>
+                        <ProgressBar Grid.Row="0" Grid.Column="1"  ProgressColor="Red" Progress="0.4" WidthRequest="50" ScaleY="2"/>
+                        <Image Grid.Row="0" Grid.Column="0" Source="icon_about.png" BackgroundColor="Transparent"/>
+                        <Image Grid.Row="0" Grid.Column="2" Source="icon_feed.png" BackgroundColor="Transparent"/>
+                    </Grid>
+                    <Label Text="Testing"/>
+                </StackLayout>
+            </Frame>
+            <Frame HeightRequest="140">
+                <StackLayout>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="20"/>
+                            <RowDefinition Height="20"/>
+                            <RowDefinition Height="5"/>
+                            <RowDefinition Height="20"/>
+                            <RowDefinition Height="15"/>
+                            <RowDefinition Height="15"/>
+                            <RowDefinition Height="15"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="20*"/>
+                            <ColumnDefinition Width="10*"/>
+                            <ColumnDefinition Width="20*"/>
+                            <ColumnDefinition Width="10*"/>
+                            <ColumnDefinition Width="20*"/>
+                            <ColumnDefinition Width="10*"/>
+                            <ColumnDefinition Width="20*"/>
+                            
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Row="0" Grid.Column="0" Text="1677" FontSize="17" FontAttributes="Bold" VerticalOptions="Start" HorizontalOptions="Center" TextColor="Black"/>
+                        <Label Grid.Row="1" Grid.Column="0" Text="Goal" FontSize="12" VerticalOptions="Start" HorizontalOptions="Center"/>
+                        <Label Grid.Row="0" Grid.Column="1" Text="-" FontSize="17" FontAttributes="Bold" VerticalOptions="Start" HorizontalOptions="Center" TextColor="Black"/>
+                        <Label Grid.Row="0" Grid.Column="2" Text="1138" FontSize="17" FontAttributes="Bold" VerticalOptions="Start" HorizontalOptions="Center" TextColor="Red"/>
+                        <Label Grid.Row="1" Grid.Column="2" Text="Food" FontSize="12" VerticalOptions="Start" HorizontalOptions="Center"/>
+                        <Label Grid.Row="0" Grid.Column="3" Text="+" FontSize="17" FontAttributes="Bold" VerticalOptions="Start" HorizontalOptions="Center" TextColor="Black"/>
+                        <Label Grid.Row="0" Grid.Column="4" Text="345" FontSize="17" FontAttributes="Bold" VerticalOptions="Start" HorizontalOptions="Center" TextColor="Purple"/>
+                        <Label Grid.Row="1" Grid.Column="4" Text="Exercise" FontSize="12" VerticalOptions="Start" HorizontalOptions="Center"/>
+                        <Label Grid.Row="0" Grid.Column="5" Text="=" FontSize="17" FontAttributes="Bold" VerticalOptions="Start" HorizontalOptions="Center" TextColor="Black"/>
+                        <Label Grid.Row="0" Grid.Column="6" Text="883" FontSize="17" FontAttributes="Bold" VerticalOptions="Start" HorizontalOptions="Center" TextColor="ForestGreen"/>
+                        <Label Grid.Row="1" Grid.Column="6" Text="Remaining" FontSize="12" VerticalOptions="Start" HorizontalOptions="Center"/>
+                        <Line Grid.Row="2" Grid.ColumnSpan="7" Stroke="Gray" X1="0" Y1="0" X2="700" Y2="0"/>
+                        <Label Grid.Row="3" Grid.ColumnSpan="2" Text="Carbohydrates" FontSize="10" VerticalOptions="Start" HorizontalOptions="Center"/>
+                        <ProgressBar x:Name="Carbointake" Grid.Row="4" Grid.ColumnSpan="2" Progress="0.75" ScaleY="2"/>
+                        <Label Grid.Row="5" Grid.ColumnSpan="2" Text="154 g of 204 g" FontSize="10" VerticalOptions="Start" HorizontalOptions="Center"/>
+                        <Label Grid.Row="3" Grid.ColumnSpan="7" Text="Protein" FontSize="10" VerticalOptions="Start" HorizontalOptions="Center"/>
+                        <ProgressBar x:Name="Proteinintake" Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="3" Progress="0.38" Margin="20,0,50,0" ScaleY="2"/>
+                        <Label Grid.Row="5" Grid.ColumnSpan="7" Text="31 g of 82 g" FontSize="10" VerticalOptions="Start" HorizontalOptions="Center"/>
+                        <Label Grid.Row="3" Grid.Column="4" Grid.ColumnSpan="3" Text="Fat" FontSize="10" VerticalOptions="Start" HorizontalOptions="Center"/>
+                        <ProgressBar x:Name="Fatintake" Grid.Row="4" Grid.Column="4" Grid.ColumnSpan="3" Progress="0.8" Margin="45,0,10,0" ScaleY="2"/>
+                        <Label Grid.Row="5" Grid.Column="4" Grid.ColumnSpan="3" Text="43 g of 54 g" FontSize="10" VerticalOptions="Start" HorizontalOptions="Center" Margin="35,0"/>
+                        <Label Grid.Row="6" Grid.ColumnSpan="7" Text="DETAILS" FontSize="13" VerticalOptions="Start" HorizontalOptions="Center" TextColor="Aqua" FontAttributes="Bold"/>
+                    </Grid>
+                </StackLayout>
+            </Frame>
+            <Frame>
+                <StackLayout>
+                    <Label Text="Sarapan Pagi" FontAttributes="Bold" HorizontalOptions="Start" TextColor="Black" Margin="10,0,0,10"/>
+                    <ListView x:Name="listView" HasUnevenRows="true">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout Padding="15,5,5,5" Orientation="Horizontal">
+                                        <Image Source="monkey.jpg" HeightRequest="50">
+                                            <Image.GestureRecognizers>
+                                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                                            </Image.GestureRecognizers>
+                                        </Image>
+                                        <Label Text="Monkey" VerticalOptions="Center" />
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
